@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content=861194348273-avlfamduuhpu0tts8dfjrtth2tt26a50.apps.googleusercontent.com>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <title>Zoop!</title>
+      <link rel="stylesheet" href="style\jquery-ui.css">
+      <link rel="stylesheet" href="style\settings.css">
+      <script src="js\jquery-1.js"></script>
+      <script src="js\jquery-ui.js"></script>
+      <script src="js\settings.js"></script>
+      <script src="js\fblogin.js"></script>
+      <script src="js\action.js"></script>
+   <script src="https://apis.google.com/js/platform.js" async defer></script>
+   <script src="js\GmailAuth.js"></script>
+   
+
+  <style>
+
+   #popup {
+    height: 240px;
+    width: 400px;
+   }
+   #divAuthGmail {
+    margin-top: 5px
+  }
+  #tabs-1{
+      background-color: #5e82a6
+    }
+    #tabs-2{
+      background-color: #5e82a6
+    }
+     </style>
+    
+</head>
+<body>
+
+<div id="popup">
+    <h1>ZOOP!</h1>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">FACEBOOK</a></li>
+    <li><a href="#tabs-2">GMAIL</a></li>
+  </ul>
+  <div id="tabs-1">
+         <!-- ONE CLICK -->
+  <div id="status"></div>
+  <p class="connect_accounts_description"></p>
+  <h3> Login to your social account:</h3>
+         <div class="clickitems" id="divSocial">
+              <!--Facebook Authorisation and Share-->
+              <fb:login-button size=large auto_logout_link=true scope="public_profile,email" onlogin="checkLoginState();">
+              </fb:login-button>
+              <div id="status"></div>
+          </div>
+    <div class="ddown">
+      <form action="#">
+            <h3> Select action:</h3>
+              <fieldset>
+                <select name="fbopt" id="fbopt">
+                  <option value="share" data-class="fbook">Share</option>
+                  <option value="sendto" data-class="fbook">Send To</option>
+                </select>
+              </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div id="tabs-2">
+   <!--Gmail Authorisation-->
+            <h3>Login to your social account:</h3>
+             <div id="divAuthGmail" class="clickitem Gmail">
+             <div class="g-signin2" data-width="84" data-height="26" theme="dark" data-onsuccess="onSignIn"></div>
+         </div>   
+      <div class="share">
+      <h3>Send Mail:</h3>
+      <input type="image" src="images\button.png" class="btTxt submit" id="saveForm" onclick="mail()" style="margin-left: 15px; margin-top: 8px" />
+      </div>
+  </div>
+</div>
+</div>
+    </body>
+</html>
